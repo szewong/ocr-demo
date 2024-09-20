@@ -2,35 +2,57 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <!-- Viewport meta tag for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Number Reader Web App</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin: 20px;
+            margin: 5vw;
         }
         #captured-image {
             max-width: 100%;
-            margin-top: 20px;
+            height: auto;
+            margin-top: 5vh;
         }
         #recognized-text {
             font-size: 1.2em;
-            margin-top: 20px;
+            margin-top: 3vh;
+            word-wrap: break-word;
         }
         input[type="file"] {
-            padding: 10px;
+            padding: 2vh 2vw;
             font-size: 1em;
+            margin-top: 2vh;
         }
         h1 {
-            margin-bottom: 30px;
+            margin-bottom: 4vh;
+            font-size: 2em;
         }
         #progress {
-            margin-top: 20px;
+            margin-top: 2vh;
+            font-size: 1em;
+        }
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            body {
+                margin: 2vw 20vw;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            input[type="file"] {
+                font-size: 1.2em;
+            }
+            #recognized-text {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Number Reader 3</h1>
+    <h1>Number Reader</h1>
     <input type="file" accept="image/*" capture="environment" id="capture-image">
     <img id="captured-image" src="" alt="Captured Image" style="display: none;">
     <p id="recognized-text"></p>
